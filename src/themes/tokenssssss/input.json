@@ -1,0 +1,40 @@
+{
+  "input": {
+    "borderRadius": {
+      "value": "4px",
+      "type": "borderRadius"
+    },
+    "borderWidth": {
+      "value": "1px",
+      "type": "borderWidth"
+    },
+    "paddingVertical": {
+      "value": "{spacing.small}",
+      "type": "spacing"
+    },
+    "paddingHorizontal": {
+      "value": "{spacing.medium}",
+      "type": "spacing"
+    },
+    "fontSize": {
+      "value": "{font.size.medium}",
+      "type": "fontSize"
+    },
+    "fontFamily": {
+      "value": "{font.family.base}",
+      "type": "fontFamily"
+    },
+    "focusBorderColor": {
+      "value": "{color.primary}",
+      "type": "color"
+    },
+    "errorBorderColor": {
+      "value": "{color.error}",
+      "type": "color"
+    },
+    "placeholderColor": {
+      "value": "#888888",
+      "type": "color"
+    }
+  }
+}

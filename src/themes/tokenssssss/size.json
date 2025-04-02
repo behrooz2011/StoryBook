@@ -1,0 +1,28 @@
+{
+  "size": {
+    "spacing": {
+      "xxs": { "value": "4px" },
+      "xs": { "value": "8px" },
+      "s": { "value": "12px" },
+      "m": { "value": "16px" },
+      "l": { "value": "20px" },
+      "xl": { "value": "24px" }
+    },
+    "borderRadius": {
+      "default": { "value": "4px" }
+    },
+    "borderWidth": {
+      "default": { "value": "1px" },
+      "focused": { "value": "2px" }
+    },
+    "height": {
+      "input": { "value": "40px" },
+      "inputMobile": { "value": "48px" }
+    },
+    "fontSize": {
+      "label": { "value": "14px" },
+      "input": { "value": "16px" },
+      "helpText": { "value": "12px" }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "ids": {
+    "font": {
+      "size": {
+        "small": { "value": "12px" },
+        "medium": { "value": "14px" },
+        "large": { "value": "16px" }
+      },
+      "weight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "500" },
+        "bold": { "value": "700" }
+      },
+      "family": {
+        "base": {
+          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+        }
+      }
+    },
+    "spacing": {
+      "xxs": { "value": "2px" },
+      "xs": { "value": "4px" },
+      "sm": { "value": "8px" },
+      "md": { "value": "12px" },
+      "lg": { "value": "16px" },
+      "xl": { "value": "24px" }
+    },
+    "border": {
+      "radius": {
+        "small": { "value": "2px" },
+        "medium": { "value": "4px" },
+        "large": { "value": "8px" }
+      },
+      "width": {
+        "thin": { "value": "1px" },
+        "thick": { "value": "2px" }
+      }
+    },
+    "transition": {
+      "fast": { "value": "150ms ease" },
+      "normal": { "value": "250ms ease" },
+      "slow": { "value": "300ms ease" }
+    }
+  }
+}

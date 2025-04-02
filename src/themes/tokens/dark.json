@@ -1,0 +1,22 @@
+{
+  "ids": {
+    "color": {
+      "dark": {
+        "primary": { "value": "#59ABE1" },
+        "text": { "value": "#E6E6E6" },
+        "text-secondary": { "value": "#B3B3B3" },
+        "border": { "value": "#4D4D4D" },
+        "border-focus": { "value": "#59ABE1" },
+        "error": { "value": "#FF5A52" },
+        "background": { "value": "#121212" },
+        "background-disabled": { "value": "#2D2D2D" }
+      }
+    },
+    "shadow": {
+      "dark": {
+        "box": { "value": "0 2px 4px rgba(0, 0, 0, 0.3)" },
+        "box-focus": { "value": "0 0 0 2px rgba(89, 171, 225, 0.4)" }
+      }
+    }
+  }
+}
