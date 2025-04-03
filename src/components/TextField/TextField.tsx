@@ -64,6 +64,7 @@ export interface TextFieldProps
   className?: string;
   /** Theme for the text field */
   theme?: "light" | "dark" | "high-contrast";
+  tabIndex?: number;
 }
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
@@ -90,6 +91,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       onChange,
       onInput,
       type = "text",
+      tabIndex = 0,
       ...rest
     },
     ref
@@ -244,8 +246,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               placeholder={labelPosition === "inside" ? undefined : placeholder}
               aria-invalid={error}
               aria-required={required}
-              aria-describedby={`${error ? errorId : ""} ${helperText ? helperId : ""}`}
+              aria-describedby={`${error ? errorId : ""}${helperText ? helperId : ""}`}
               type={type}
+              tabIndex={tabIndex}
               {...rest}
             />
             {labelPosition === "inside" && (

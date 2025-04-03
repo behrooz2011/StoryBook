@@ -17,4 +17,5 @@ export default {
   moduleNameMapper: {
     "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMocks.ts", // Mock CSS imports
   },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // Add this line to include the setup file
 };
