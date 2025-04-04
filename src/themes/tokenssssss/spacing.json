@@ -1,8 +1,0 @@
-{
-  "spacing": {
-    "tiny": { "value": "4px" },
-    "small": { "value": "8px" },
-    "medium": { "value": "12px" },
-    "large": { "value": "16px" }
-  }
-}

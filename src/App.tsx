@@ -1,81 +1,3 @@
-// import React, { useState } from "react";
-// import { TextField } from "./components/TextField";
-// // import { TextField } from "./components/TextField";
-
-// const App = () => {
-//   const [email, setEmail] = useState("");
-//   const [emailError, setEmailError] = useState("");
-
-//   const validateEmail = (email: string) => {
-//     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return regex.test(email);
-//   };
-
-//   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const value = e.target.value;
-//     setEmail(value);
-
-//     if (value && !validateEmail(value)) {
-//       setEmailError("Please enter a valid email address");
-//     } else {
-//       setEmailError("");
-//     }
-//   };
-
-//   const EmailIcon = () => (
-//     <svg
-//       width="24"
-//       height="24"
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
-//         fill="#6B6C72"
-//       />
-//     </svg>
-//   );
-
-//   return (
-//     <div>
-//       <h1>Form Example</h1>
-//       <form>
-//         <TextField
-//           id="email-field"
-//           label="Email"
-//           type="email"
-//           placeholder="Enter your email address"
-//           // helperText="We'll only use this for communication purposes."
-//           value={email}
-//           onChange={handleEmailChange}
-//           error={emailError}
-//           required
-//           endIcon={<EmailIcon />}
-//         />
-
-//         <TextField
-//           id="user-id"
-//           label="User ID"
-//           placeholder="Enter your user ID"
-//           helperText="Your user ID can be found in your profile settings."
-//           required
-//         />
-
-//         <TextField
-//           id="address"
-//           label="Street address"
-//           placeholder="Enter your address"
-//           fullWidth
-//         />
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default App;
-
-////////////////////////////////////////////////
 // src/App.tsx
 import React, { useState } from "react";
 import "./App.css";
@@ -164,6 +86,17 @@ function App() {
   const [address, setAddress] = useState("");
   const [userId, setUserId] = useState("");
   const [emailError, setEmailError] = useState(false);
+  const [userIdError, setUserIdError] = useState(false);
+
+  const validateUserId = (value: string) => {
+    return value.length >= 8;
+  };
+
+  const handleUserIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setUserId(value);
+    setUserIdError(value !== "" && !validateUserId(value));
+  };
 
   const validateEmail = (value: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -246,13 +179,24 @@ function App() {
             </div>
 
             <div className="field-container">
-              <TextField
+              {/* <TextField
                 label="User ID"
                 helperText="Choose a unique user ID"
                 startIcon={<UserIcon />}
                 placeholder="user123"
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
+                theme={theme}
+              /> */}
+              <TextField
+                label="User ID"
+                helperText="Choose a unique user ID (min 8 characters)"
+                startIcon={<UserIcon />}
+                placeholder="user123"
+                value={userId}
+                onChange={handleUserIdChange}
+                error={userIdError}
+                errorMessage="User ID must be at least 8 characters long"
                 theme={theme}
               />
             </div>
@@ -284,7 +228,7 @@ function App() {
               </div>
             </div>
 
-            <div className="states-container">
+            {/* <div className="states-container">
               <h3>States</h3>
               <div className="field-container">
                 <TextField
@@ -303,7 +247,7 @@ function App() {
                   theme={theme}
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </main>
       </div>

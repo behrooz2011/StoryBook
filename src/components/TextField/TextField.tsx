@@ -1,30 +1,3 @@
-// import React from "react";
-// import styles from "./TextField.module.css";
-
-// export interface TextFieldProps
-//   extends React.InputHTMLAttributes<HTMLInputElement> {
-//   label: string;
-//   error?: string;
-// }
-
-// export const TextField = ({ label, error, ...rest }: TextFieldProps) => {
-//   const inputId = React.useId();
-
-//   return (
-//     <div className={styles.container}>
-//       <label htmlFor={inputId} className={styles.label}>
-//         {label}
-//       </label>
-//       <input
-//         id={inputId}
-//         className={`${styles.input} ${error ? styles.error : ""}`}
-//         {...rest}
-//       />
-//       {error && <span className={styles.errorMessage}>{error}</span>}
-//     </div>
-//   );
-// };
-/////////////////////////////////
 // src/components/TextField/TextField.tsx
 import React, { forwardRef, useState, useEffect, useRef } from "react";
 import classNames from "classnames";
@@ -89,7 +62,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       placeholder,
       value,
       onChange,
-      onInput,
+      // onInput,
       type = "text",
       tabIndex = 0,
       ...rest
@@ -99,30 +72,19 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const [focused, setFocused] = useState(false);
     const [hasValue, setHasValue] = useState(Boolean(value));
     const [inputValue, setInputValue] = useState(value || "");
-    const inputRef = useRef<HTMLInputElement>(null);
+    // const inputRef = useRef<HTMLInputElement>(null);
+
     // const combinedRef = (node: HTMLInputElement | null) => {
     //   // Forward the ref
     //   if (typeof ref === "function") {
     //     ref(node);
     //   } else if (ref && "current" in ref) {
-    //     ref.current = node;
-    //     // Type guard ensures this is a mutable ref
     //     (ref as React.MutableRefObject<HTMLInputElement | null>).current = node;
     //   }
-    //   inputRef.current = node;
+
+    //   (inputRef as React.MutableRefObject<HTMLInputElement | null>).current =
+    //     node;
     // };
-
-    const combinedRef = (node: HTMLInputElement | null) => {
-      // Forward the ref
-      if (typeof ref === "function") {
-        ref(node);
-      } else if (ref && "current" in ref) {
-        (ref as React.MutableRefObject<HTMLInputElement | null>).current = node;
-      }
-
-      (inputRef as React.MutableRefObject<HTMLInputElement | null>).current =
-        node;
-    };
 
     // Update hasValue when value prop changes
     useEffect(() => {
@@ -234,7 +196,8 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           )}
           <div className="ids-textfield-input-wrapper">
             <input
-              ref={combinedRef}
+              ref={null}
+              // ref={combinedRef}
               id={inputId}
               name={name}
               className={inputClassNames}
